@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  couchdb:
+    image: couchdb:latest
+    volumes:
+      - $PWD/.couchdb/data:/opt/couchdb/data
+      - $PWD/.couchdb/etc:/opt/couchdb/etc
+    restart: always
+    ports:
+      - 5984:5984
+    environment:
+      COUCHDB_USER: haroo
+      COUCHDB_PASSWORD: haroo
+
+  web:
+    image: haroo:latest
+    depends_on:
+      - couchdb
+    ports:
+      - 8000:80
+
+volumes:
+  couchdb:
