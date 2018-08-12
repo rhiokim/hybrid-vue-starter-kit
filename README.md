@@ -3,7 +3,7 @@
 ## Structure Diagram
 
 ```
-electron -> app -> leveldb
+electron -> app -> PouchDB
                           \ (sync)
                            CouchDB
                           / OAuth (2.0)
