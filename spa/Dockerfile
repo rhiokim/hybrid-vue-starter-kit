@@ -1,8 +1,10 @@
 # base
-FROM node:8.9 as base
+FROM node:lts-alpine as base
 WORKDIR /app
 
 COPY package.json ./
+COPY package-lock.json ./
+
 RUN npm install
 
 # build
@@ -15,11 +17,12 @@ ARG env=$env
 
 COPY babel.config.js babel.config.js
 COPY vue.config.js vue.config.js
-COPY tsconfig.json tsconfig.json
 COPY public public
+COPY tests tests
 COPY src src
-COPY $env .env
+COPY $env .env.production
 
+# RUN npm lint
 # RUN npm test
 RUN npm run build
 

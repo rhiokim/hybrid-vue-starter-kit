@@ -8,12 +8,26 @@ module.exports = {
   lintOnSave: true,
 
   configureWebpack: {
+    // refs https://webpack.js.org/configuration/performance/#performance-maxentrypointsize
+    // performance: {
+    //   maxEntrypointSize: 900000,
+    //   maxAssetSize: 800000
+    // },
     plugins: [
+      new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en|ko)$/),
+      new webpack.LoaderOptionsPlugin({
+        options: {
+          stylus: {
+            use: []
+          }
+        }
+      }),
       // refs https://github.com/vuejs/vue-cli/issues/978
       new CompressionWebpackPlugin({
-        asset: '[path].gz[query]',
+        // asset -> filename https://github.com/vuejs/vue-cli/issues/978#issuecomment-419946578
+        filename: '[path].gz[query]',
         algorithm: 'gzip',
-        threshold: 102400,
+        threshold: 0,
         minRatio: 0.8,
         cache: true
       })
@@ -33,6 +47,6 @@ module.exports = {
   },
 
   pwa: {
-    name: 'haroo'
+    name: 'pwa name'
   }
 }
