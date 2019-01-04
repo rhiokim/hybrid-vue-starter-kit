@@ -11,7 +11,12 @@
     "lint:fix": "eslint --ext .js,.vue components layouts pages server --fix",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "docker:build": "docker build --tag haroo-ssr --build-arg env=.env.development . && npm run docker:images",
+    "docker:images": "docker images | grep haroo-ssr",
+    "docker:run": "docker run -dit -p 9001:3000 --name haroo-ssr haroo-ssr:latest",
+    "docker:rm": "docker rm -f haroo-ssr",
+    "docker": "npm run docker:rm && npm run docker:build && npm run docker:run"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
