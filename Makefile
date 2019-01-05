@@ -29,7 +29,8 @@ build:
 	cd app; npm run build
 
 clean:
-	@echo "none"
+	@echo "clean docker processes"
+	@echo "clean build files"
 
 build-spa:
 	cd spa; npm run build
