@@ -29,6 +29,8 @@ browser -> web(nuxt.js):9001
 ## Makefile
 
 ```bash
+make init
+
 make build
 make up
 make restart

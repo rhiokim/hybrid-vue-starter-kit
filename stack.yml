@@ -14,12 +14,18 @@ services:
       COUCHDB_USER: haroo
       COUCHDB_PASSWORD: haroo
 
-  web:
-    image: haroo:latest
+  spa:
+    image: haroo-spa:latest
     depends_on:
       - couchdb
     ports:
-      - 8000:80
+      - 9000:80
+  web:
+    image: haroo-ssr:latest
+    depends_on:
+      - couchdb
+    ports:
+      - 9001:3000
 
 volumes:
   couchdb:
