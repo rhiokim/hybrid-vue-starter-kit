@@ -20,4 +20,18 @@ down:
 restart: stop boot
 	@echo "🚫 ... 🚀"
 
+build:
+	@echo "🤖 Building SPA"
+	cd spa; npm run build; npm run docker:build
+	@echo "🤖 Building WEB"
+	cd web;	npm run build; npm run docker:build
+	@echo "🤖 Building APP"
+	cd app; npm run build
+
+clean:
+	@echo "none"
+
+build-spa:
+	cd spa; npm run build
+
 .PHONY: init

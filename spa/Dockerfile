@@ -28,6 +28,7 @@ RUN npm run build
 
 # release
 FROM nginx:alpine
+LABEL maintainer="rhio.kim@gmail.com"
 ARG http_auth=false
 COPY nginx /etc/nginx
 COPY --from=build /app/dist /usr/share/nginx/html
