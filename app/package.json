@@ -10,6 +10,7 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
+    "rebuild": "electron-rebuild -f -w pouchdb",
     "dev": "node .electron-vue/dev-runner.js",
     "e2e": "npm run pack && mocha test/e2e",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src test",
@@ -57,6 +58,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "pouchdb": "^7.0.0",
     "vue": "^2.5.21",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.2",
@@ -64,6 +66,7 @@
     "vuex-electron": "^1.0.2"
   },
   "devDependencies": {
+    "@types/pouchdb": "^6.3.2",
     "ajv": "^6.6.2",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
@@ -86,6 +89,7 @@
     "electron-builder": "^20.38.4",
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
+    "electron-rebuild": "^1.8.2",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^4.0.1",

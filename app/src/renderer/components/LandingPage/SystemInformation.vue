@@ -26,6 +26,10 @@
         <div class="name">Platform:</div>
         <div class="value">{{ platform }}</div>
       </div>
+      <div class="item">
+        <div class="name">PouchDB:</div>
+        <div class="value">adapter:{{ pouchdb.adapter }} / path:{{ pouchdb.db_name }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,8 +43,16 @@
         node: process.versions.node,
         path: this.$route.path,
         platform: require('os').platform(),
-        vue: require('vue/package.json').version
+        vue: require('vue/package.json').version,
+        pouchdb: null
       }
+    },
+    beforeMount () {
+      this.$db.info().then((info) => {
+        this.pouchdb = info
+      }).catch((err) => {
+        console.log(err)
+      })
     }
   }
 </script>

@@ -32,7 +32,7 @@ export default {
   },
   async asyncData({ app }) {
     try {
-      const data = await app.$axios.$get(`http://localhost:5984`)
+      const data = await app.$axios.$get('/')
       return { ...data }
     } catch ({ response }) {
       return { ...response.data }

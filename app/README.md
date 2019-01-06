@@ -1,6 +1,6 @@
 # app
 
-> An electron-vue project
+> An electron-vue project with Pouchdb version 7.0.0
 
 #### Build Setup
 
@@ -12,7 +12,11 @@ npm install
 npm run dev
 
 # build electron application for production
+# ref. https://electronjs.org/docs/tutorial/using-native-node-modules
 npm run build
+
+# rebuild electron application with native modules
+npm run rebuild
 
 # run unit & end-to-end tests
 npm test
