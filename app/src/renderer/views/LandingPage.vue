@@ -20,9 +20,9 @@
           <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button><br><br>
         </div>
         <div class="doc">
-          <div class="title alt">Other Documentation</div>
-          <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
-          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
+          <div class="title alt">Pages</div>
+          <router-link to="/new">+</router-link>
+          <a class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</a>
         </div>
       </div>
     </main>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-  import SystemInformation from './LandingPage/SystemInformation'
+  import SystemInformation from '@/components/LandingPage/SystemInformation'
 
   export default {
     name: 'landing-page',

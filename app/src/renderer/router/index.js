@@ -8,7 +8,17 @@ export default new Router({
     {
       path: '/',
       name: 'landing-page',
-      component: require('@/components/LandingPage').default
+      component: require('@/views/LandingPage').default
+    },
+    {
+      path: '/preferences',
+      name: 'preferences',
+      component: require('@/views/Preferences').default
+    },
+    {
+      path: '/new',
+      name: 'new',
+      component: require('@/views/New').default
     },
     {
       path: '*',
