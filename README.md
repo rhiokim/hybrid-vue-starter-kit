@@ -14,6 +14,8 @@ browser -> web(nuxt.js):9001
         -> spa(vue, nginx):9000
 ```
 
+![](./media/offline-first-web-application-architecture.002.jpeg)
+
 * app
   * based on https://github.com/SimulatedGREG/electron-vue
 * web(ssr)
