@@ -2,14 +2,15 @@
 
 ## Structure Diagram
 
-```txt
+```bash
 electron -> app -> PouchDB(leveldb)
                           \ (sync)
-                           CouchDB
+                           CouchDB:5984 ----- Solr or ES
                           / OAuth (2.0)
 browser -> web(nuxt.js):9001
                        \
-                        firbase (Auth, Notification and Etc)
+                        firbase (Notification and Etc)
+                       /
         -> spa(vue, nginx):9000
 ```
 
