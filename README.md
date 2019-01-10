@@ -1,5 +1,14 @@
 # Project
 
+The purpose of this project is to demonstrate the concept of an environment for offline-first web application development with Electron and modern web stacks.
+
+It consists of three main components.
+
+* Electron + Vue.js SPA + LevelDB
+* CouchDB cluster
+* Universal Rendering Framework
+* (Optional) Search Engine
+
 ## Structure Diagram
 
 ```bash
@@ -13,6 +22,8 @@ browser -> web(nuxt.js):9001
                        /
         -> spa(vue, nginx):9000
 ```
+
+### illustration
 
 ![](./media/offline-first-web-application-architecture.002.jpeg)
 
@@ -34,9 +45,14 @@ browser -> web(nuxt.js):9001
 ```bash
 make init
 
+# to build container every components (electron, spa, ssr)
 make build
+
+# to boot up every components on the docker environment using docker-compose
 make up
+# to re-boot up every components
 make restart
+# to clean and remove every components that working on docker environment
 make clean
 ```
 
@@ -45,3 +61,5 @@ make clean
 * [ ] [CouchDB Configuration for Clustering](http://docs.couchdb.org/en/stable/config/cluster.html)
 
 ## License
+
+MIT
