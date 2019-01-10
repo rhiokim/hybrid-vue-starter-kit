@@ -59,6 +59,9 @@ make clean
 ## TODO
 
 * [ ] [CouchDB Configuration for Clustering](http://docs.couchdb.org/en/stable/config/cluster.html)
+* [ ] SPA/SSR Web Application integrate with CouchDB
+* [ ] Add Apache Solr or Elastic Search in stack.yml
+  * [ ] Add search function to SPA/SSR app
 
 ## License
 
