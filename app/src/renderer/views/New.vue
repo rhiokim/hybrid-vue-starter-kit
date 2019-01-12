@@ -3,6 +3,7 @@
     <ul>
       <li v-for="(doc, idx) in rows" :key="idx">{{ doc.doc.text }}</li>
     </ul>
+    <input v-model="title" />
     <textarea v-model="text"></textarea>
     <button @click="submit">submit</button>
     <button @click="back">back</button>
@@ -13,6 +14,7 @@
 export default {
   data () {
     return {
+      title: '',
       text: '',
       rows: []
     }
@@ -36,8 +38,9 @@ export default {
       this.$router.back()
     },
     submit () {
-      const { text } = this
+      const { title, text } = this
       this.$db.post({
+        title,
         text
       }).then(response => {
         this.fetch()
@@ -49,3 +52,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  input, textarea {
+    display: block;
+  }
+</style>
+

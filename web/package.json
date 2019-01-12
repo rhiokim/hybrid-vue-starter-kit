@@ -21,11 +21,14 @@
     "docker": "npm run docker:rm && npm run docker:build && npm run docker:run"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
-    "nuxt": "^2.0.0",
     "express": "^4.16.3",
-    "@nuxtjs/axios": "^5.0.0"
+    "nuxt": "^2.0.0",
+    "pouchdb-adapter-http": "^7.0.0",
+    "pouchdb-core": "^7.0.0",
+    "pouchdb-mapreduce": "^7.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
