@@ -1,7 +1,8 @@
 init:
 	mkdir -p .couchdb/data
 	mkdir -p .couchdb/log
-	mkdir -p .couchdb/etc
+	mkdir -p .couchdb/etc/local.d
+	mkdir -p .couchdb/etc/default.d
 	# for cluster & replica
 	# mkdir -p .couchdb-slave/data
 	# mkdir -p .couchdb-slave/log

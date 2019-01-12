@@ -5,7 +5,7 @@ services:
     image: couchdb:latest
     volumes:
       - $PWD/.couchdb/data:/opt/couchdb/data
-      # - $PWD/.couchdb/etc:/opt/couchdb/etc
+      - $PWD/.couchdb/etc:/opt/couchdb/etc/local.d
       # - $PWD/.couchdb/log:/opt/couchdb/log
     restart: always
     ports:
