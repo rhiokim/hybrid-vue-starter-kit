@@ -62,6 +62,12 @@ make clean
 * [ ] SPA/SSR Web Application integrate with CouchDB
 * [ ] Add Apache Solr or Elastic Search in stack.yml
   * [ ] Add search function to SPA/SSR app
+* [ ] Filtered replication - https://pouchdb.com/api.html#filtered-replication
+* [ ] Authentication - https://github.com/pouchdb-community/pouchdb-authentication
+
+## Refrences
+
+* https://github.com/pouchdb-community
 
 ## License
 
