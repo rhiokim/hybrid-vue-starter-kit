@@ -1,0 +1,17 @@
+@import 'base/_reset'
+
+@import 'base/all'
+@import 'utilities/all'
+@import 'components/all'
+
+body
+  color $color_black
+  font-size $font_size_s14
+
+.group
+  .block
+    &:not(:last-child)
+      border-bottom 0
+
+table
+  margin-bottom 20px

@@ -56,6 +56,10 @@ make restart
 make clean
 ```
 
+## After run
+
+* Enable CORS
+
 ## TODO
 
 * [ ] [CouchDB Configuration for Clustering](http://docs.couchdb.org/en/stable/config/cluster.html)

@@ -1,0 +1,45 @@
+@import '_variables'
+@import '_colors'
+
+html, body
+  height 100%
+
+// Base Styles
+body
+  margin 0 auto
+  padding 0
+  font-family AppleSDGothicNeo, Helvetica, sans-serif
+  -webkit-tap-highlight-color transparent
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -webkit-touch-callout none
+  -webkit-user-select none
+  user-select none
+  touch-action manipulation
+
+// Typography
+h1, h2, h3, h4, h5, h6
+  margin 0
+
+p
+  margin-top 0
+
+// placehodler
+::-webkit-input-placeholder { /* 크롬 4–56 */
+  color #aeaeae
+}
+:-moz-placeholder { /* 파이어폭스 4–18 */
+  color #9e9e9e
+  opacity 1
+}
+::-moz-placeholder { /* 파이어폭스 19–50 */
+   color #9e9e9e
+   opacity 1
+}
+:-ms-input-placeholder { /* 인터넷 익스플로러 10+ */
+   color #9e9e9e
+}
+::placeholder { /* 파이어폭스 51+, 크롬 57+ */
+   color #bebebe
+   opacity 1
+}
