@@ -1,2 +1,3 @@
 .couchdb*
-.pouch
+.pouchdb
+.DS_Store

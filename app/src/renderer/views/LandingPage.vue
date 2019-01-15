@@ -19,11 +19,6 @@
           </p>
           <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button><br><br>
         </div>
-        <div class="doc">
-          <div class="title alt">Pages</div>
-          <router-link to="/new">+</router-link>
-          <a class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</a>
-        </div>
       </div>
     </main>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>type: {{ type }}</div>
+    <div>type: {{ title }}</div>
     <div>text: {{ text }}</div>
   </div>
 </template>

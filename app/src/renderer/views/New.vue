@@ -1,61 +1,20 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="(doc, idx) in rows" :key="idx">{{ doc.doc.text }}</li>
-    </ul>
-    <input v-model="title" />
-    <textarea v-model="text"></textarea>
-    <button @click="submit">submit</button>
-    <button @click="back">back</button>
-  </div>
+  <ul>
+    <li>
+      <a @click.prevent="onCreate">note</a></li>
+    <li>presentation</li>
+    <li>todo</li>
+    <li>mdx</li>
+  </ul>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      title: '',
-      text: '',
-      rows: []
-    }
-  },
-  beforeMount () {
-    this.fetch()
-  },
   methods: {
-    fetch () {
-      this.$db.allDocs({
-        include_docs: true
-      }).then(result => {
-        console.log(result)
-        this.rows = result.rows
-        // handle result
-      }).catch(err => {
-        console.log(err)
-      })
-    },
-    back () {
-      this.$router.back()
-    },
-    submit () {
-      const { title, text } = this
-      this.$db.post({
-        title,
-        text
-      }).then(response => {
-        this.fetch()
-        // handle response
-      }).catch(err => {
-        console.log(err)
-      })
+    onCreate () {
+      console.log('new note')
+      this.$router.push('main')
     }
   }
 }
 </script>
-
-<style>
-  input, textarea {
-    display: block;
-  }
-</style>
-

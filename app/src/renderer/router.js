@@ -21,6 +21,21 @@ export default new Router({
       component: require('@/views/New').default
     },
     {
+      path: '/main',
+      name: 'main',
+      component: require('@/views/Main').default
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: require('@/views/SignUp').default
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: require('@/views/Login').default
+    },
+    {
       path: '*',
       redirect: '/'
     }

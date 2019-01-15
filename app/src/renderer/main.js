@@ -1,32 +1,30 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-import PouchDB from 'pouchdb'
-import App from './App'
-import router from './router'
-import store from './store'
+import App from './App.vue'
+import router from './router.js'
+import store from './store.js'
+
+// import DB from './plugins/db.js'
+// import { toHex } from './modules/utils.js'
+// import { DB_HOST, DatabasePrefix } from './modules/constants.js'
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 
-/**
- * TODO: clean up and configuration
- */
-Vue.db = Vue.prototype.$db = new PouchDB('../.pouch/haroo')
-Vue.db.sync('http://localhost:5984/haroo', {
-  live: true,
-  retry: true
-}).on('change', info => {
-  console.log(info)
-}).on('paused', err => {
-  if (err) {}
-}).on('active', function () {
-}).on('denied', function (err) {
-  if (err) {}
-}).on('complete', function (info) {
-}).on('error', function (err) {
-  if (err) {}
-})
+// const DB_NAME = `${DatabasePrefix}-${toHex('batman')}`
 
+// Vue.use(DB, {
+//   store,
+//   local: `../.pouchdb/${DB_NAME}`,
+//   remote: {
+//     url: `${DB_HOST}/${DB_NAME}`,
+//     auth: {
+//       username: 'batman',
+//       password: '1234'
+//     },
+//     skip_setup: false
+//   }
+// })
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 

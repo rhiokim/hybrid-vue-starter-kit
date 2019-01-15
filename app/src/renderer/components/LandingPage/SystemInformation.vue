@@ -27,8 +27,12 @@
         <div class="value">{{ platform }}</div>
       </div>
       <div class="item">
-        <div class="name">PouchDB:</div>
-        <div class="value">adapter:{{ pouchdb.adapter }} / path:{{ pouchdb.db_name }}</div>
+        <div class="name">local:</div>
+        <div class="value">adapter:{{ local.adapter }} / path:{{ local.db_name }}</div>
+      </div>
+      <div class="item">
+        <div class="name">remote:</div>
+        <div class="value">adapter:{{ remote.adapter }} / path:{{ remote.db_name }}</div>
       </div>
     </div>
   </div>
@@ -44,15 +48,23 @@
         path: this.$route.path,
         platform: require('os').platform(),
         vue: require('vue/package.json').version,
-        pouchdb: {}
+        local: {},
+        remote: {}
       }
     },
     beforeMount () {
-      this.$db.info().then((info) => {
-        this.pouchdb = info
-      }).catch((err) => {
-        console.log(err)
-      })
+      // this.$local.info().then(info => {
+      //   this.local = info
+      // }).catch((err) => {
+      //   console.log(err)
+      // })
+
+      // this.$remote.info().then(info => {
+      //   this.remote = info
+      //   console.log(info)
+      // }).catch(err => {
+      //   console.log(err)
+      // })
     }
   }
 </script>
