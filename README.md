@@ -16,6 +16,8 @@ electron -> app -> PouchDB(leveldb)
                           \ (sync)
                            CouchDB:5984 ----- Solr or ES
                           / OAuth (2.0)
+mobile pwa               /
+           \            /
 browser -> web(nuxt.js):9001
                        \
                         firbase (Notification and Etc)
@@ -25,7 +27,7 @@ browser -> web(nuxt.js):9001
 
 ### illustration
 
-![](./media/offline-first-web-application-architecture.002.jpeg)
+![](./media/offline-first-web-application-architecture.002.png)
 
 * app
   * based on https://github.com/SimulatedGREG/electron-vue
